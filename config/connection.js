@@ -17,5 +17,12 @@ if (process.env.JAWSDB_URL) {
         }
     );
 }
+async function authTest () {
+    await sequelize.authenticate();
+    console.log("JawsDB connected successfully");
+}
+
+authTest ();
+
 
 module.exports = sequelize;

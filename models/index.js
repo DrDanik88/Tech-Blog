@@ -1,62 +1,41 @@
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize('database', 'username', 'password', {
-    host: 'localhost',
-    dialect: 'mysql'
+const User = require("user");
+const Post = require("post");
+const Comment = require("comment");
+
+//logic
+//user has many posts
+//post belong to one user
+//user has many comments
+//comment belong to one user
+//post has many comments
+//comment belong to one post
+
+User.hasMany(Post, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+  });
+
+    Post.belongsTo(User, {
+    foreignKey: 'user_id',
+    });
+
+User.hasMany(Comment, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
 });
 
-// Define User model
-const User = sequelize.define('user', {
-    username: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    email: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        unique: true
-    },
-    password: {
-        type: Sequelize.STRING,
-        allowNull: false
-    }
+Comment.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete:"CASCADE",
 });
 
-// Define BlogPost model
-const BlogPost = sequelize.define('blogPost', {
-    title: {
-        type: Sequelize.STRING,
-        allowNull: false
-    },
-    content: {
-        type: Sequelize.TEXT,
-        allowNull: false
-    }
+Post.hasMany(Comment, {
+    foreignKey: 'post_id',
+    onDelete: 'CASCADE',
 });
 
-// Define Comment model
-const Comment = sequelize.define('comment', {
-    content: {
-        type: Sequelize.TEXT,
-        allowNull: false
-    }
-});
+    Comment.belongsTo(User, {
+    foreignKey: 'post_id',
+    });
 
-// Define associations between models
-User.hasMany(BlogPost);
-BlogPost.belongsTo(User);
-
-User.hasMany(Comment);
-Comment.belongsTo(User);
-
-BlogPost.hasMany(Comment);
-Comment.belongsTo(BlogPost);
-
-
-
-
-// Export models
-module.exports = {
-    User,
-    BlogPost,
-    Comment
-};
+module.exports = { User, Post, Comment };
