@@ -26,9 +26,31 @@
                 <div class="card-body">
                     <h5 class="card-title">Blog Post Title 1</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at justo auctor, malesuada tellus in, malesuada massa.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                    <!-- Delete button (only for the author) -->
-                    <button class="btn btn-danger mt-2">Delete</button>
+                    <!-- Comments Section -->
+                    <div class="comments">
+                        <!-- Comment 1 -->
+                        <div class="comment mb-2">
+                            <strong>UserA:</strong> Comment 1
+                            <!-- Delete Comment Button (visible to the comment owner) -->
+                            <button class="btn btn-danger btn-sm float-right">Delete Comment</button>
+                        </div>
+                        <!-- Comment 2 -->
+                        <div class="comment">
+                            <strong>UserB:</strong> Comment 2
+                            <!-- Delete Comment Button (visible to the comment owner) -->
+                            <button class="btn btn-danger btn-sm float-right">Delete Comment</button>
+                        </div>
+                    </div>
+                    <!-- Add Comment Form -->
+                    <form class="mt-2">
+                        <div class="form-group">
+                            <label for="commentText">Add a Comment</label>
+                            <input type="text" class="form-control" id="commentText" placeholder="Write a comment">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Comment</button>
+                    </form>
+                    <!-- Delete Post Button (visible to the post owner) -->
+                    <button class="btn btn-danger mt-2">Delete Post</button>
                 </div>
             </div>
         </div>
@@ -42,9 +64,25 @@
                 <div class="card-body">
                     <h5 class="card-title">Blog Post Title 2</h5>
                     <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at justo auctor, malesuada tellus in, malesuada massa.</p>
-                    <a href="#" class="btn btn-primary">Read More</a>
-                    <!-- Delete button (only for the author) -->
-                    <button class="btn btn-danger mt-2">Delete</button>
+                    <!-- Comments Section -->
+                    <div class="comments">
+                        <!-- Comment 3 -->
+                        <div class="comment mb-2">
+                            <strong>UserC:</strong> Comment 3
+                            <!-- Delete Comment Button (visible to the comment owner) -->
+                            <button class="btn btn-danger btn-sm float-right">Delete Comment</button>
+                        </div>
+                    </div>
+                    <!-- Add Comment Form -->
+                    <form class="mt-2">
+                        <div class="form-group">
+                            <label for="commentText2">Add a Comment</label>
+                            <input type="text" class="form-control" id="commentText2" placeholder="Write a comment">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Comment</button>
+                    </form>
+                    <!-- Delete Post Button (visible to the post owner) -->
+                    <button class="btn btn-danger mt-2">Delete Post</button>
                 </div>
             </div>
         </div>
