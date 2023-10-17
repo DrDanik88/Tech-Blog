@@ -1,7 +1,13 @@
 const router = require('express').Router();
 const User = require('../models/User');
 
+router.get('/hello', (req, res) => {
+    res.send('Hello, world');
+});
+
+
 router.post('/signup', async (req, res) => {
+    console.log("signup route");
     try {
         const { username, password, passwordConfirm } = req.body;
 

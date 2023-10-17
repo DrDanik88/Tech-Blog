@@ -2,6 +2,7 @@ const router = require('express').Router();
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
+    console.log("usercontroller homepage loaded");
     const logged_in = req.session.logged_in || false;
     res.render('homepage', { logged_in });
 });
@@ -11,7 +12,7 @@ router.get('/homepage', (req, res) => {
     res.render('homepage', { logged_in });
 });
 
-router.get('/dashboard', withAuth, (req, res) => {
+router.get('/dashboard', (req, res) => {
     const logged_in = req.session.logged_in || false;
     res.render('dashboard', { logged_in });
 });

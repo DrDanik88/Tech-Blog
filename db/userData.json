@@ -1,6 +1,3 @@
-const { User } = require('../models');
-
-const userData =
     [
         {
             "username": "ryker",
@@ -14,12 +11,4 @@ const userData =
             "username": "ezra",
             "password": "ezra1234"
         }
-    ];
-
-const seedAllUsers = async () => {
-    for (const user of userData) {
-        await User.create(user);
-    }
-}
-
-module.exports = seedAllUsers;
+    ]

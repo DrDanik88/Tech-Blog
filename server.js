@@ -8,29 +8,53 @@ const app = express();
 const session = require('express-session');
 const exphbs = require("express-handlebars");
 const PORT = process.env.PORT || 8000;
-
+const sequelize = require('./config/config');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const userRoutes = require('./controllers/userController');
+const authRoutes = require('./controllers/authController');
 
 //create a new instance of handlebars with default parameters
 const hbs = exphbs.create({
-    layoutsDir: __dirname + '/views/layouts',
+    layoutsDir: __dirname + '/public/views/layouts',
     extname: 'hbs',
-    partialsDir: __dirname + '/views/partials/'
+    partialsDir: __dirname + '/public/views/',
+    extname: 'hbs',
 });
+
+const sess = {
+    secret: process.env.SESSION_SECRET,
+    cookie: {
+      maxAge: 3600000,
+      httpOnly: true,
+      secure: false,
+      sameSite: 'strict',
+    },
+    resave: false,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db: sequelize
+    })
+  };
+
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
+app.set('views', path.join(__dirname, 'public', 'views'));
+app.use(express.static(path.join(__dirname, '/public')));
+  app.use(session(sess));
+  app.use(authRoutes);
+  app.use(userRoutes);
+  app.use(express.urlencoded());
+  app.use(express.json());
 
-app.listen(PORT, () => {
-    console.log("Server is started on port " + PORT);
-});
-app.use(express.static('public'));
-app.get("/", (req, res) =>{
-    res.render("main",{layout:"index"});
-});
+  sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
+  });
 
 
-/*
-app.get("/", (req, res) =>{
-    res.render("main",{layout:"index"});
+
+
+  app.get("/dashboard", (req, res) =>{
+    console.log("dashboard loaded");
+    res.render("dashboard",{layout:"main"});
 });
-*/

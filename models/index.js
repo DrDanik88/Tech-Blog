@@ -1,21 +1,21 @@
-const User = require("user");
-const Post = require("post");
-const Comment = require("comment");
+const User = require("./User");
+const Blog = require("./Blog");
+const Comment = require("./Comment");
 
 //logic
-//user has many posts
-//post belong to one user
+//user has many Blogs
+//Blog belong to one user
 //user has many comments
 //comment belong to one user
-//post has many comments
-//comment belong to one post
+//Blog has many comments
+//comment belong to one Blog
 
-User.hasMany(Post, {
+User.hasMany(Blog, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE',
   });
 
-    Post.belongsTo(User, {
+    Blog.belongsTo(User, {
     foreignKey: 'user_id',
     });
 
@@ -29,13 +29,13 @@ Comment.belongsTo(User, {
     onDelete:"CASCADE",
 });
 
-Post.hasMany(Comment, {
-    foreignKey: 'post_id',
+Blog.hasMany(Comment, {
+    foreignKey: 'Blog_id',
     onDelete: 'CASCADE',
 });
 
-    Comment.belongsTo(Post, {
-    foreignKey: 'post_id',
+    Comment.belongsTo(Blog, {
+    foreignKey: 'Blog_id',
     });
 
-module.exports = { User, Post, Comment };
+module.exports = { User, Blog, Comment };
