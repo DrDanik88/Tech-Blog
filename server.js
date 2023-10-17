@@ -58,3 +58,8 @@ app.use(express.static(path.join(__dirname, '/public')));
     console.log("dashboard loaded");
     res.render("dashboard",{layout:"main"});
 });
+
+app.get("/home", (req, res) =>{
+  console.log("homepage loaded");
+  res.render("homepage",{layout:"main"});
+});

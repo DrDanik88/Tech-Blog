@@ -26,6 +26,11 @@ function renderDashboard () {
     console.log("redirecting to dashboard")
 };
 
+function renderHomepage () {
+    document.location.replace('/home');
+    console.log("redirecting to home")
+};
+
 const registerFormHandler = async (event) => {
     console.log("form registerhandler executing");
     event.preventDefault();
@@ -76,5 +81,12 @@ if ($('#dashboardBtn')) {
     $('#dashboardBtn').on('click', function () {
         console.log("Dashboard button clicked");
         renderDashboard();
+    });
+};
+
+if ($('#homeBtn')) {
+    $('#homeBtn').on('click', function () {
+        console.log("Home button clicked");
+        renderHomepage();
     });
 };
