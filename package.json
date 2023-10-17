@@ -11,7 +11,10 @@
     "path": "^0.12.7",
     "sequelize": "^6.33.0"
   },
-  "scripts": {
+  "engines": {
+    "node": "18.17.0"
+  },
+    "scripts": {
     "start": "nodemon server.js"
   }
 }
