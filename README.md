@@ -1,60 +1,106 @@
-# Tech-Blog
+# Project: wallet-wiz
 
+ ![License Badge](https://img.shields.io/badge/License-MIT%20License-blue)
 
+![GitHub]
+ https://github.com/DrDanik88/Tech-Blog
+ 
+***
+## Technologies
+Technologies used: 
+![Technologies](https://img.shields.io/badge/-Git-F05032?logo=Git&logoColor=white)
+![Technologies](https://img.shields.io/badge/-JavaScript-007396?logo=JavaScript&logoColor=white)
+![Technologies](https://img.shields.io/badge/-Node.js-339933?logo=Node.js&logoColor=white)
+![Technologies](https://img.shields.io/badge/-npm-CB3837?logo=npm&logoColor=white)
+![Technologies](https://img.shields.io/badge/-MySQL-4479A1?logo=MySQL&logoColor=white)
+![Technologies](https://img.shields.io/badge/-Inquirer-000000?logo=&logoColor=white)
+![Technologies](https://img.shields.io/badge/-jQuery-000000?logo=JQuery&logoColor=white)
 
-Project Setup:
+***
+## Table of Contents
+- [Description](#description)
+- [Installation](#installation)
+- [Project Usage](#usage) 
+- [Contributing](#contributing) 
+- [Contact Me](#contact)
+- [License](#license)
 
-Create a new project directory.
-Set up a version control system (e.g., Git) to track your code.
-Initialize a Node.js project with npm init and install necessary dependencies.
-Database Setup:
+*** 
+## Description
+This is an interactive full-stack project following the Model-View-Controller (MVC) pattern using JavaScript and integrating with a cloud MySql database. This project has a complex back-end and a quite simple front-end. 
+Deployed on heroku, it is simple to use. The goal was to create a tech blog where users can make posts, add comments and delete the posts/comments.
 
-Choose a database system (e.g., PostgreSQL) and set it up.
-Create tables for Users, Posts, and Comments using Sequelize migrations.
-Establish the necessary associations between these models (e.g., a User has many Posts, a Post has many Comments).
-Server Setup:
+### Requierments
+```
+Use Node.js and Express.js to create a RESTful API.
 
-Set up an Express.js server to handle HTTP requests.
-Configure express-session for user authentication and store user data in sessions.
-Implement user registration and login routes using passport.js or another authentication library.
-Front-end Templating:
+Use Handlebars.js as the templating engine.
 
-Create Handlebars.js templates for rendering blog posts, comments, user profiles, and the authentication system.
-Set up routes and controllers to render these templates and pass data to them.
-User Dashboard:
+Use MySQL and the Sequelize ORM for the database.
 
-Implement a user dashboard where users can create, edit, and delete their blog posts.
-Allow users to view their own profile and update their information.
-Blog Posts and Comments:
+Have both GET and POST routes for retrieving and adding new data.
 
-Create routes and controllers for creating, editing, and deleting blog posts.
-Implement comment functionality, allowing users to comment on blog posts.
-Navigation and Layout:
+Be deployed using Heroku (with data).
 
-Design the layout of your blog site, including a navigation menu.
-Implement navigation buttons for the Home page, User Dashboard, and Logout.
-Middleware and Security:
+Use at least one new library, package, or technology that we haven’t discussed.
 
-Implement middleware to protect routes that require authentication.
-Sanitize user input to prevent XSS attacks and other security vulnerabilities.
-Testing:
+Have a polished UI.
 
-Test your application thoroughly, covering user authentication, blog post creation, comment functionality, and edge cases.
-Use testing libraries like Mocha and Chai for backend testing and frameworks like Jest for frontend testing.
-Deployment to Heroku:
+Be responsive.
 
-Set up a Heroku account if you don't have one already.
-Configure a Heroku app and add a PostgreSQL database.
-Set environment variables for sensitive data (e.g., database connection, session secrets).
-Create a Heroku Procfile to specify the app's entry point.
-Push your code to the Heroku remote and deploy the app.
-Ensure all dependencies are installed using the npm install command.
-Monitor the Heroku logs for any deployment errors.
-Final Testing and Bug Fixes:
+Be interactive (i.e., accept and respond to user input).
 
-Test the deployed app on Heroku to ensure it works as expected in a production environment.
-Address any issues that arise during deployment.
-Documentation and User Guide:
+Have a folder structure that meets the MVC paradigm.
 
-Provide documentation for how to use your blog site, including registration, login, and post/comment management.
-Create a user guide or FAQ section to assist users.
+Include authentication (express-session and cookies).
+
+Protect API keys and sensitive information with environment variables
+```
+*** 
+## Installation
+The installation can be completed by following these instructions:
+
+***Requirements***
+[Node.js](https://nodejs.org/en/) | [MySQL](https://www.npmjs.com/package/mysql2) | [Sequelize] https://www.npmjs.com/package/sequelize | [Express] https://www.npmjs.com/package/express | [dotenv] https://www.npmjs.com/package/dotenv | [jquery] https://jquery.com | [handlebars] https://handlebarsjs.com | 
+
+1. Clone the GitHub repository to you local computer. Click on the following link.
+* Repository link : https://github.com/DrDanik88/Tech-Blog
+
+2. Install the following packages:
+    - Connect to MySql and use databases dedicated
+    - Run the command npm install  
+    - Run the command source db/schema.sql to create the database.
+    - Run the command npm run seed to seed the database.
+    - Run the command node start to run the software.
+    
+    The application will then begin to run locally.
+
+***
+## Usage  
+To execute the script, open a Git terminal on the main project folder (cloned folder) Run the following command: npm start
+
+### Screenshot
+ 
+![Alt text](assets/main.JPG)
+![Alt text](assets/dashboard.JPG)
+
+### Deployment
+Link to Heroku
+
+https://techblog-lula-f925b2203a15.herokuapp.com/
+ 
+   
+*** 
+## Contact
+For additional questions, Github page:(https://github.com/DrDanik88)
+
+***
+## License
+
+This application is covered under the MIT License.
+
+Copyright (c) September 2023  
+
+    This software/code is licensed under the MIT License; 
+    to use this software/code you must agree to follow and comply the License.
+    A copy of the License can be found at: https://www.gnu.org/licenses/gpl-3.0.md 
